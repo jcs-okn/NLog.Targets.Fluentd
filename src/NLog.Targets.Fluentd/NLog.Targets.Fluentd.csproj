@@ -3,19 +3,22 @@
   <PropertyGroup>
     <TargetFrameworks>net35;net40;net45;netstandard2.0</TargetFrameworks>
 
-    <Description>NLog Target that emits the log entries to a fluentd node</Description>
-    <Authors>Moriyoshi Koizumi</Authors>
+    <Description>This is forked from NLog.Targets.Fluentd.</Description>
+    <Authors>k-oshiro</Authors>
     <CurrentYear>$([System.DateTime]::Now.ToString(yyyy))</CurrentYear>
-    <Copyright>Copyright (c) $(CurrentYear) - Moriyoshi Koizumi</Copyright>
+    <Copyright>Copyright (c) 2021 - JCS</Copyright>
 
-    <Version>1.0.5.0</Version>
+    <Version>1.0.5.6</Version>
     
     <PackageTags>NLog;fluentd;log;logging</PackageTags>
-    <PackageIconUrl>http://nlog-project.org/N.png</PackageIconUrl>
-    <PackageProjectUrl>https://github.com/fluent/NLog.Targets.Fluentd</PackageProjectUrl>
-    <PackageLicenseUrl>https://raw.githubusercontent.com/fluent/NLog.Targets.Fluentd/master/LICENSE.txt</PackageLicenseUrl>
-    <RepositoryType>git</RepositoryType>
-    <RepositoryUrl>git://github.com/fluent/NLog.Targets.Fluentd</RepositoryUrl>
+    <PackageIconUrl></PackageIconUrl>
+    <PackageProjectUrl>https://github.com/jcs-okn/NLog.Targets.Fluentd</PackageProjectUrl>
+    <PackageLicenseUrl></PackageLicenseUrl>
+    <RepositoryType></RepositoryType>
+    <RepositoryUrl></RepositoryUrl>
+    <Company>JCS</Company>
+    <Product>JcsOkn.NLog.Targets.Fluentd</Product>
+    <PackageId>JcsOkn.NLog.Targets.Fluentd</PackageId>
   </PropertyGroup>
 
   <PropertyGroup Condition=" '$(TargetFramework)' != 'netstandard2.0' ">
@@ -27,7 +30,7 @@
     <Reference Include="System.Core" />
 
     <PackageReference Include="MsgPack.Cli" Version="0.8.0" />
-    <PackageReference Include="NLog" Version="2.1.0.0" />
+    <PackageReference Include="NLog" Version="4.7.9" />
   </ItemGroup>
 
   <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard2.0' ">

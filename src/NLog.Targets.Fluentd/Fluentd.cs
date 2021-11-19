@@ -187,6 +187,10 @@ namespace NLog.Targets
 
         public int Port { get; set; }
 
+        public string ApplicationName { get; set; }
+
+        public Layouts.Layout Client { get; set; }
+
         public string Tag { get; set; }
 
         public bool NoDelay { get; set; }
@@ -289,6 +293,10 @@ namespace NLog.Targets
                 { "message", Layout.Render(logEvent) },
                 { "logger_name", logEvent.LoggerName },
                 { "sequence_id", logEvent.SequenceID },
+                { "tag", this.Tag },
+                { "application_name", this.ApplicationName },
+                { "client", this.Client.Render(logEvent)},
+                { "@time", logEvent.TimeStamp.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.ffff") }
             };
             if (this.EmitStackTraceWhenAvailable && logEvent.HasStackTrace)
             {
